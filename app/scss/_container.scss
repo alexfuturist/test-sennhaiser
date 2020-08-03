@@ -1,0 +1,74 @@
+// ==== <ОБОЛОЧКА> ======//
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+
+    &.loaded {}
+}
+
+//===== ПЕРЕМЕННЫЕ СЕТКА ======//
+$mw: 1200;
+$md1: $mw+12; //добавляем шиирну скроллбара
+$md2: 991.98;
+$md3: 767.98;
+$md4: 575.98;
+$minwidth: 320px;
+
+//===== <ОСНОВНАЯ СЕТКА> ======//
+.container {
+
+    // -- СМАРТФОН (< 576px) --//
+    @media (max-width: $md4+px) {
+        width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    // -- СМАРТФОН (горизонтально) (>= 576px) --//
+    @media (min-width: $md4+px) and (max-width: $md3+px) {
+        width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    // -- ПЛАНШЕТ (>= 768px) --//
+    @media (min-width: $md3+px) and (max-width: $md2+px) {
+        width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    // -- ДЕСКТОП (>= 992px) --//
+    @media (min-width: $md2+px) and (max-width: $md1+px) {
+        width: 100%;
+        padding: 0 10px;
+        margin: 0 auto;
+        margin: 0 auto;
+    }
+
+    // -- ДЕСКТОП (>= 1200px) --//
+    @media (min-width: $md1+px) {
+        padding: 0 10px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: $mw + px;
+    }
+}
+
+//===== <ОСНОВНАЯ СЕТКА заготока> ======//
+
+// -- СМАРТФОН (< 576px) --//
+@media (max-width: $md4+px) {}
+
+// -- СМАРТФОН (горизонтально) (>= 576px) --//
+@media (min-width: $md4+px) and (max-width: $md3+px) {}
+
+// -- ПЛАНШЕТ (>= 768px) --//
+@media (min-width: $md3+px) and (max-width: $md2+px) {}
+
+// -- ДЕСКТОП (>= 992px) --//
+@media (min-width: $md2+px) and (max-width: $md1+px) {}
+
+// -- ДЕСКТОП (>= 1200px) --//
+@media (min-width: $md1+px) {}

@@ -1,0 +1,16 @@
+@@include("1_jquery.fancybox.js") //Попап галерея
+@@include("1_jquery.nav.js") //Добавление подчеркивания пункта меню
+@@include("1_jquery.popover.min.js") //Всплывашка при наведении
+@@include("2_gallery-baguetteBox.js") //Галлерея с зуммированием
+@@include("2_owl.carousel.js") //Галлерея OWL-carousel
+@@include("3_slider-before-after.js") //Слайдер ДО-ПОСЛЕ (слайдер с котом)
+@@include("3-slider-slick.min.js") //Слайдер СЛИК
+@@include("4_SmoothScroll.js") //Плавный скроллингs
+@@include("")
+@@include("")
+
+<script src="js/aos.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA92JzjuIMmOmI9XRRNDk2YGOH0eslkBHc&callback=initMap" async defer></script>

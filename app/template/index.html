@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project</title>
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <!-- <link rel="preload" href="fonts/Oswald-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Oswald-Regular.woff2" as="font" type="font/woff2" crossorigin> -->
+    <script src="js/webp.min.js"></script>
+    <script src="js/picturefill.min.js" async></script>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+
+    @@include("html/0_header.html")
+ 
+    <main class="main">
+
+        <!--Секция 1-->
+        @@include("html/1_section-1.html")
+
+    </main>
+
+    <!--ФУТЕР-->
+    @@include("html/90_footer.html")
+
+    <!--МОДАЛКА - Добавление товара в корзину-->
+    @@include("html/91_modal-cart-notification.html")
+
+    <!--МОДАЛКА - Корзина - оформление заказа-->
+    @@include("html/92_modal-cart.html")
+
+    <!--МОДАЛКА - Корзина - заявка отправлена-->
+    @@include("html/93_modal-cart-sent.html")
+
+    <!--МОДАЛКА - Форма заказа - заявка отправлена-->
+    @@include("html/95_modal-form.html")
+
+    <!--МОДАЛКА - Обратный звонок-->
+    @@include("html/96_modal-collback.html")
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script> -->
+    <script src="js/vendors.min.js" defer></script>
+    <script src="js/scripts1.min.js" defer></script>
+
+</body>
+
+</html>

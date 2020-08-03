@@ -1,0 +1,25 @@
+@import "_variables.scss";
+
+//===== ОСНОВЫНЕ СТИЛИ =====//
+body {
+    font-family: 'Oswald', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+
+    background-color: white;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: rgb(0, 0, 0);
+}
+
+.visually-hidden {
+    position: absolute;
+    visibility: hidden;
+}
+
+.lock {
+    overflow: hidden;
+}

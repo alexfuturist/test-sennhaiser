@@ -1,0 +1,337 @@
+// @import "_variables.scss";
+
+
+// // РАДИОКНОПКА
+// .form__radio-input {
+//     display: none;
+// }
+
+// .form__radio-label {
+//     position: relative;
+//     padding-left: 45px;
+
+//     font-size: 16px;
+//     line-height: 18px;
+//     font-weight: 400;
+//     text-transform: uppercase;
+//     color: #222222;
+
+//     &::before {
+//         content: "";
+//         position: absolute;
+//         left: 0px;
+//         top: 0px;
+
+//         transform: translateY(-25%);
+
+//         width: 30px;
+//         height: 30px;
+//         border: 1.0px solid #cdcdcd;
+//         border-radius: 50%;
+
+//         transition-duration: $item-transition-hover*2;
+//     }
+
+
+//     &:active::before {
+//         border-color: #444444;
+//         opacity: 0.3;
+//         transition-duration: $item-transition-hover;
+//     }
+
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         left: 9px;
+//         top: 5px;
+
+//         transform: translateY(-25%);
+
+//         width: 12px;
+//         height: 12px;
+//         background-color: transparent;
+//         border-radius: 50%;
+
+//         transition-duration: $item-transition-hover;
+//     }
+
+//     &:active::after {
+//         content: "";
+//         position: absolute;
+//         left: 9px;
+//         top: 5px;
+
+//         transform: translateY(-25%);
+
+//         width: 12px;
+//         height: 12px;
+//         background-color: #68b738;
+//         border-radius: 50%;
+//         opacity: 0.7;
+
+//         transition-duration: $item-transition-hover;
+//     }
+
+// }
+
+// .form__radio-input:checked+.form__radio-label {
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         left: 9px;
+//         top: 5px;
+
+//         transform: translateY(-25%);
+
+//         width: 12px;
+//         height: 12px;
+//         background-color: #68b738;
+//         border-radius: 50%;
+
+//         transition-duration: $item-transition-hover;
+//     }
+// }
+
+
+
+
+
+// // ИНПУТ ПОЛЕ - КОНТАКТЫ
+// .form__contacts-label,
+// .form__contacts-input {
+//     font-size: 16px;
+//     line-height: 18px;
+//     text-transform: uppercase;
+//     color: #222222;
+// }
+
+// .form__contacts-label {
+//     flex-shrink: 0;
+// }
+
+// .form__contacts-input {
+//     margin-left: 15px;
+//     padding: 0 15px;
+//     padding-right: 45px;
+//     width: 100%;
+
+//     height: 45px;
+//     border: 1.0px solid #cdcdcd;
+
+//     transition-duration: $item-transition-hover;
+
+//     &:focus {
+//         padding: 14px;
+//         border: 2.0px solid #444444;
+//         transition-duration: $item-transition-hover;
+//     }
+// }
+
+// .form__contacts-input::placeholder {
+//     font-size: 16px;
+//     line-height: 18px;
+//     text-transform: uppercase;
+//     color: #949494;
+// }
+
+// .form__contacts-input--phone {
+//     position: absolute;
+//     right: 16px;
+//     top: 16px;
+// }
+
+// .form__contacts-input--email {
+//     position: absolute;
+//     right: 13px;
+//     top: 13px;
+// }
+
+// .form__contacts-input--phone,
+// .form__contacts-input--email {
+//     path {
+//         fill: #222222;
+//         transition-duration: $item-transition-hover;
+//     }
+// }
+
+
+// // TEXTAREA
+// .form__information-input {
+//     padding: 15px;
+
+//     height: 150px;
+
+//     resize: none;
+
+//     width: calc(100% - 40px);
+
+//     border: 1px solid #f1f1f1;
+
+//     font-size: 16px;
+//     line-height: 18px;
+//     font-weight: 400;
+//     text-transform: uppercase;
+//     color: #444444;
+
+//     transition-duration: $item-transition-hover;
+
+//     &:hover {
+//         border: 1.0px solid #cdcdcd;
+//         transition-duration: $item-transition-hover;
+//     }
+
+//     &:focus,
+//     &:active {
+//         padding: 14px;
+//         border: 2.0px solid #444444;
+//         transition-duration: $item-transition-hover;
+//     }
+
+//     &::placeholder {
+//         color: #949494;
+//     }
+// }
+
+
+
+// // ЧЕКБОКС
+// .form__checkbox-input {
+//     display: none;
+// }
+
+// .form__checkbox-label {
+//     position: relative;
+//     padding-left: 44px;
+
+//     font-size: 16px;
+//     line-height: 18px;
+//     font-weight: 400;
+//     text-transform: uppercase;
+//     color: #222222;
+
+//     &::before {
+//         content: "";
+//         position: absolute;
+//         left: 0px;
+//         top: 5px;
+
+//         transform: translateY(-25%);
+
+//         width: 30px;
+//         height: 30px;
+//         border: 1.0px solid #cdcdcd;
+
+//         transition-duration: $item-transition-hover*2;
+//     }
+
+//     &:hover::before {
+//         border-color: #bababa;
+//         transition-duration: $item-transition-hover;
+//     }
+
+//     &:active::before {
+//         border-color: #bababa;
+//         opacity: 0.3;
+//         transition-duration: $item-transition-hover;
+//     }
+
+
+
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         left: 10px;
+//         top: 1px;
+
+//         transform: translateY(-25%);
+
+//         width: 10px;
+//         height: 18px;
+
+//         border: solid transparent;
+//         border-width: 0 2px 2px 0;
+//         transform: rotate(45deg);
+
+//         transition-duration: $item-transition-hover;
+//     }
+
+// }
+
+// .form__checkbox-input:checked+.form__checkbox-label {
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         left: 10px;
+//         top: 1px;
+
+//         transform: translateY(-25%);
+
+//         width: 10px;
+//         height: 18px;
+
+//         border: solid #68b738;
+//         border-width: 0 2px 2px 0;
+//         transform: rotate(45deg);
+//     }
+
+//     &:active::after {
+//         opacity: 0.3;
+//         transition-duration: $item-transition-hover;
+//     }
+// }
+
+
+
+// //ВАЛИДАЦИЯ ПОЛЕЙ ФОРМЫ 
+
+// //Класс валидации - поле заполнено верно
+// .form-valid {
+//     padding: 14px;
+//     border: 2.0px solid #68b738;
+//     transition-duration: $item-transition-hover;
+
+//     path {
+//         fill: #68b738;
+//         transition-duration: $item-transition-hover;
+//     }
+
+//     &:focus {
+//         padding: 14px;
+//         border: 2.0px solid #68b738;
+//         transition-duration: $item-transition-hover;
+//     }
+// }
+
+// .form-valid+.form__contacts-input--phone,
+// .form-valid+.form__contacts-input--email {
+//     path {
+//         fill: #68b738;
+//         transition-duration: $item-transition-hover;
+//     }
+// }
+
+// //Класс валидации - поле заполнено НЕ верно
+// .form-invalid {
+//     padding: 14px;
+//     border: 2.0px solid #ff8282;
+//     transition-duration: $item-transition-hover;
+
+//     &:focus {
+//         padding: 14px;
+//         border: 2.0px solid #ff8282;
+//         transition-duration: $item-transition-hover;
+//     }
+
+//     path {
+//         fill: #ff8282;
+//         transition-duration: $item-transition-hover;
+//     }
+// }
+
+// .form-invalid+.form__contacts-input--phone,
+// .form-invalid+.form__contacts-input--email {
+//     path {
+//         fill: #ff8282;
+//         transition-duration: $item-transition-hover;
+//     }
+// }

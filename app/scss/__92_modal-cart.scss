@@ -1,0 +1,14 @@
+// -- СМАРТФОН (< 576px) --//
+@media (max-width: $md4+px) {}
+
+// -- СМАРТФОН (горизонтально) (>= 576px) --//
+@media (min-width: $md4+px) and (max-width: $md3+px) {}
+
+// -- ПЛАНШЕТ (>= 768px) --//
+@media (min-width: $md3+px) and (max-width: $md2+px) {}
+
+// -- ДЕСКТОП (>= 992px) --//
+@media (min-width: $md2+px) and (max-width: $md1+px) {}
+
+// -- ДЕСКТОП (>= 1200px) --//
+@media (min-width: $md1+px) {}

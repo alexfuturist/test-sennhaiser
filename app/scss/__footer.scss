@@ -1,0 +1,257 @@
+@import "_variables.scss";
+
+//-- MOBILE --//
+@media (max-width:767px) {
+
+    .page-footer {
+        background-color: #f2f2f2;
+    }
+
+    .page-footer__wrapper {
+        padding: 0 20px;
+    }
+
+    .page-footer__logo {
+        display: block;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    // Cоцсети
+    .page-footer__social {
+        height: 62px;
+
+        border-top: 1px solid #d9d9d9;
+        border-bottom: 1px solid #d9d9d9;
+
+    }
+
+    .social {}
+
+    .social__list {
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .social__item {
+        width: 60px;
+    }
+
+    .social__link {
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        fill: #666666;
+        transition-duration: $item-transition-hover;
+
+        &:hover {
+            fill: #68b738;
+            transition-duration: $item-transition-hover;
+        }
+
+        &:active {
+            opacity: 0.3;
+            transition-duration: $item-transition-hover;
+        }
+
+    }
+
+
+
+    // КОПИРАЙТ
+    .page-footer__copyright {
+        height: 80px;
+
+    }
+
+    .copyright {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: $font-secondary;
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 400;
+        color: #444444;
+    }
+
+    .copyright__text {
+        margin-right: 10px;
+    }
+
+    .copyright__link {
+        color: #68b738;
+
+        &:active {
+            text-decoration: underline;
+            transition-duration: $item-transition-hover;
+        }
+
+    }
+
+}
+
+//-- ПЛАНШЕТ ВОДОПАД--//
+@media (min-width:768px) {
+    .page-footer {
+        background-color: #f2f2f2;
+    }
+
+    .page-footer__wrapper {
+        padding: 0 30px;
+        height: 150px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .page-footer__logo {
+        height: 80px;
+        width: 120px;
+
+        display: flex;
+        align-items: center;
+
+        cursor: pointer;
+
+        fill: #121212;
+
+        transition-duration: $item-transition-hover;
+
+        &:hover {
+            opacity: 0.8;
+            fill: #5eaa2f;
+            transition-duration: $item-transition-hover;
+        }
+
+        &:active {
+            opacity: 0.6;
+            transition-duration: $item-transition-hover;
+        }
+    }
+
+    .page-footer__social {
+        height: 80px;
+    }
+
+    .social {}
+
+    .social__list {
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .social__item {
+        width: 60px;
+        cursor: pointer;
+    }
+
+    .social__link {
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        fill: #666666;
+        transition-duration: $item-transition-hover;
+
+        &:hover {
+            fill: #68b738;
+            transition-duration: $item-transition-hover;
+        }
+
+        &:active {
+            opacity: 0.6;
+            transition-duration: $item-transition-hover;
+        }
+
+    }
+
+    .page-footer__copyright {
+        height: 80px;
+        width: 120px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-family: $font-secondary;
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 600;
+        color: #444444;
+
+        transition-duration: $item-transition-hover;
+
+        .copyright__text {
+            margin-bottom: 5px;
+        }
+
+        .copyright__link {
+            position: relative;
+            padding-right: 3px;
+
+            font-weight: 600;
+            color: #68b738;
+            transition-duration: $item-transition-hover;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0px;
+    
+                height: 2px;
+                width: 0%;
+    
+                background-color: #68b738;
+    
+                transition-property: width;
+            }
+
+            &:hover::before {
+                width: 100%;
+                transition-property: width;
+                transition-duration: $item-transition-hover*3;
+                transition-timing-function: ease-out;
+            }
+        }
+
+        &:hover {
+            
+            fill: #68b738;
+            transition-duration: $item-transition-hover;
+        }
+
+        &:active {
+            opacity: 0.6;
+            transition-duration: $item-transition-hover;
+        }
+
+
+    }
+
+}
+
+
+
+//-- ДЕСКТОП --//
+@media (min-width:1150px) {
+    .page-footer__wrapper {
+        padding: 0 30px;
+        margin: 0 auto;
+        max-width: 1280px;
+    }
+}
