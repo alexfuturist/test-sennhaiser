@@ -19,4 +19,4 @@
 
 **Проверка валидации от W3C**  - [link](https://validator.w3.org/nu/?doc=https%3A%2F%2Falexfuturist.github.io%2Ftest-sennheiser%2F)
 
-**Проверка Google PageSpeed (100%)**  - [link](https://developers.google.com/speed/pagespeed/insights/?hl=uk&url=https%3A%2F%2Falexfuturist.github.io%2Ftest-sennheiser%2F&tab=desktop)
+**Проверка Google PageSpeed**  - [link](https://developers.google.com/speed/pagespeed/insights/?hl=uk&url=https%3A%2F%2Falexfuturist.github.io%2Ftest-sennheiser%2F&tab=desktop)
