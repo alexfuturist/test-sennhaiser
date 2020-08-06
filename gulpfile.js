@@ -10,7 +10,6 @@ const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngquant = require('imagemin-pngquant');
 const webp = require('gulp-webp');
 const fileinclude = require('gulp-file-include');
-// const webpHTML = require('gulp-webp-html');
 const GulpWebpHtml2 = require('gulp-webp-in-html');
 const webpcss = require("gulp-webpcss");
 const uglify = require('gulp-uglify');
@@ -110,16 +109,6 @@ function vendors() {
     .pipe(browserSync.stream());
 };
 
-// function vendors() {
-//   return gulp.src('app/js/libs/*.js')
-//     .pipe(concat('vendors.js'))
-//     .pipe(gulp.dest('app/js'))
-//     .pipe(uglify())
-//     .pipe(rename("vendors.min.js"))
-//     .pipe(gulp.dest('./app/js'))
-//     .pipe(browserSync.stream());
-// };
-
 function scripts1() {
   return gulp.src('app/js/1/*.js')
     .pipe(concat('scripts1.js'))
@@ -130,35 +119,6 @@ function scripts1() {
     .pipe(browserSync.stream());
 };
 
-function scripts2() {
-  return gulp.src('app/js/2/*.js')
-    .pipe(concat('scripts2.js'))
-    .pipe(gulp.dest('./app/js'))
-    .pipe(uglify())
-    .pipe(rename("scripts2.min.js"))
-    .pipe(gulp.dest('./app/js'))
-    .pipe(browserSync.stream());
-};
-
-function scripts3() {
-  return gulp.src('app/js/3/*.js')
-    .pipe(concat('scripts3.js'))
-    .pipe(gulp.dest('./app/js'))
-    .pipe(uglify())
-    .pipe(rename("scripts3.min.js"))
-    .pipe(gulp.dest('./app/js'))
-    .pipe(browserSync.stream());
-};
-
-function scripts4() {
-  return gulp.src('app/js/4/*.js')
-    .pipe(concat('scripts4.js'))
-    .pipe(gulp.dest('./app/js'))
-    .pipe(uglify())
-    .pipe(rename("scripts4.min.js"))
-    .pipe(gulp.dest('./app/js'))
-    .pipe(browserSync.stream());
-};
 
 // Изображения
 function image() {
@@ -201,10 +161,8 @@ function watch() {
   gulp.watch('app/scss/*.scss', style);
   gulp.watch('app/scss/blocks/*.scss', style);
   gulp.watch('app/js/0_libs/*.js', vendors);
+  gulp.watch('app/template/**/*.html', image);
   gulp.watch('app/js/1/*.js', scripts1);
-  gulp.watch('app/js/2/*.js', scripts2);
-  gulp.watch('app/js/3/*.js', scripts3);
-  gulp.watch('app/js/4/*.js', scripts4);
   gulp.watch('app/**/*.html').on('change', browserSync.reload);
 };
 
@@ -216,8 +174,6 @@ function move() {
     .pipe(GulpWebpHtml2())
     .pipe(gulp.dest('dist/')),
     gulp.src('app/js/*.min.js')
-    .pipe(gulp.dest('dist/js/')),
-    gulp.src('app/js/webp/webp.min.js')
     .pipe(gulp.dest('dist/js/')),
     gulp.src('app/fonts/*.woff')
     .pipe(gulp.dest('dist/fonts')),
@@ -236,15 +192,12 @@ exports.fontsStyle = fontsStyle;
 exports.style = style;
 exports.vendors = vendors;
 exports.scripts1 = scripts1;
-exports.scripts2 = scripts2;
-exports.scripts3 = scripts3;
-exports.scripts4 = scripts4;
 exports.watch = watch;
 exports.image = image;
 exports.removedist = removedist;
 
 // Сборка
 gulp.task('build', gulp.series(removedist, gulp.parallel(html, style, vendors,
-  scripts1, scripts2, scripts3, scripts4, image), move));
+  scripts1, image), move));
 
 //Выгрузка изменений на репозиторий

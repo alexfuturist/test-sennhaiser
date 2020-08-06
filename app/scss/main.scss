@@ -18,36 +18,13 @@
 @import "_container.scss";
 
 // <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ ЭЛЕМЕНТОВ И СТРАНИЦ>======================
-// @import "1_jquery.fancybox.scss"; //Попап галерея
-@import "1_popover.min.scss"; //Всплывающее сообщение
-@import "2_baguetteBox.scss"; //Галлерея с зуммированием
-//@import "../../js/fancybox/jquery.fancybox.scss";
-//@import "datepicker.scss";
-//@import "fontawesome.scss";
-//@import "pagging.scss";
-//@import "icons.scss";
-
-@import "__header.scss";
-@import "__footer.scss";
+@import "__lib_swiper.scss"; //Галлерея с зуммированием
 @import "__scrollbar.scss";
 
-// @import "__popup.scss";
-// @import "__91_modal-cart-notification.scss";
-// @import "__92_modal-cart.scss";
-// @import "__93_modal-cart-sent.scss";
-// @import "__95-modal-form.scss";
-// @import "__96-modal-collback.scss";
-// @import "__97-modal-login.scss";
+//<ПОДКЛЮЧЕНИЕ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
+@import "_ui.scss";
 
 //<ОСНОВНОЙ БЛОК>=================================
-@import "__section1.scss";
+@import "__item.scss";
 
-
-//<ПОДКЛЮЧЕНИЕ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
-// @import "_forms.scss";
-// @import "_modal_common.scss";
-// @import "_ui.scss";
-
-// <БИБЛИОТЕКА АНИМАЦИИ, МОИ АНИМАЦИИ>=========
-// @import "_aos.scss";
-// @import "_my-animate.scss";
+@import "__91_modal-basket.scss";

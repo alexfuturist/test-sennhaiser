@@ -8644,4 +8644,4 @@
   return Swiper;
 
 }));
-//# sourceMappingURL=swiper.js.map //Слайдер Swipe на нативном js
+//# sourceMappingURL=swiper.js.map

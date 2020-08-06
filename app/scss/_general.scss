@@ -2,17 +2,18 @@
 
 //===== ОСНОВЫНЕ СТИЛИ =====//
 body {
-    font-family: 'Oswald', 'Arial', sans-serif;
-    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
     font-weight: 400;
 
     background-color: white;
+    color: #263238;
 
     overflow-x: hidden;
 }
 
 a {
-    color: rgb(0, 0, 0);
+    color: #263238;
 }
 
 .visually-hidden {
