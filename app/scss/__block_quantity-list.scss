@@ -1,0 +1,201 @@
+@import "_variables.scss";
+
+// -- СМАРТФОН (< 800px) --//
+@media (max-width: $md3+px) {
+    .quantity-list {
+        display: flex;
+    }
+
+    //Инпут колличества
+    .quantity-list__input {
+        width: 62px;
+        height: 54px;
+        border: 1px solid #dfdfdf;
+
+        font-size: 18px;
+        text-align: center;
+        line-height: 35px;
+        letter-spacing: 0.025em;
+        color: #403f40;
+
+        //скрываем дефолтные стрелки
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        -moz-appearance: textfield;
+    }
+
+
+
+    .quantity-list__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        margin-left: 10px;
+    }
+
+    //кнопка-стрелка
+    .quantity-list__button {
+        position: relative;
+        width: 32px;
+        height: 24px;
+        background-color: transparent;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 4px;
+
+            width: 12px;
+            height: 12px;
+
+            border: solid #37474f;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+
+            transition-duration: $item-transition-hover;
+        }
+    }
+
+    //кнопка-стрелка (вверх)
+    .quantity-list__button--increase {
+        transform: rotate(180deg);
+    }
+
+    //кнопка-стрелка (вниз)
+    .quantity-list__button--decrease {}
+
+    //кнопки-стрелки (активное состояние)
+    .quantity-list__button:hover {
+        &::before {
+            border: solid #536dfe;
+            border-width: 0 2px 2px 0;
+            transition-duration: $item-transition-hover;
+        }
+    }
+
+    .quantity-list__button:active {
+        &::before {
+            border: solid #a5cee2;
+            border-width: 0 2px 2px 0;
+            transition-duration: $item-transition-hover;
+        }
+    }
+
+    //НЕ активное состояние
+    .quantity-list__button--disabled {
+        &::before {
+            border: solid #37474f;
+            border-width: 0 2px 2px 0;
+            opacity: 0.2;
+
+            transition-duration: $item-transition-hover;
+        }
+    }
+}
+
+
+
+
+
+// -- ПЛАНШЕТ, ДЕСКТОП (>= 800px) --//
+@media (min-width: $md3+px) {
+    .quantity-list {
+        display: flex;
+    }
+
+    //Инпут колличества
+    .quantity-list__input {
+        width: 52px;
+        height: 46px;
+        border: 1px solid #dfdfdf;
+
+        font-size: 18px;
+        text-align: center;
+        line-height: 35px;
+        letter-spacing: 0.025em;
+        color: #403f40;
+
+        //скрываем дефолтные стрелки
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        -moz-appearance: textfield;
+    }
+
+
+
+    .quantity-list__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        margin-left: 5px;
+    }
+
+    //кнопка-стрелка
+    .quantity-list__button {
+        position: relative;
+        width: 21px;
+        height: 20px;
+        background-color: transparent;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 5px;
+
+            width: 7px;
+            height: 7px;
+
+            border: solid #37474f;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+
+            transition-duration: $item-transition-hover;
+        }
+    }
+
+    //кнопка-стрелка (вверх)
+    .quantity-list__button--increase {
+        transform: rotate(180deg);
+    }
+
+    //кнопка-стрелка (вниз)
+    .quantity-list__button--decrease {}
+
+    //кнопки-стрелки (активное состояние)
+    .quantity-list__button:hover {
+        &::before {
+            border: solid #536dfe;
+            border-width: 0 2px 2px 0;
+            transition-duration: $item-transition-hover;
+        }
+    }
+
+    .quantity-list__button:active {
+        &::before {
+            border: solid #a5cee2;
+            border-width: 0 2px 2px 0;
+            transition-duration: $item-transition-hover;
+        }
+    }
+
+    //НЕ активное состояние
+    .quantity-list__button--disabled {
+        &::before {
+            border: solid #37474f;
+            border-width: 0 2px 2px 0;
+            opacity: 0.2;
+
+            transition-duration: $item-transition-hover;
+        }
+    }
+}

@@ -225,7 +225,7 @@
         margin-top: 20px;
     }
 
-    .item__quantity-list {}
+    
 
 
 
@@ -278,7 +278,7 @@
 @media (min-width: $md3+px) {
     .basket {
         position: fixed;
-        right: -40%;
+        right: -400px;
         top: 0;
         bottom: 0;
 
@@ -448,10 +448,6 @@
     .basket__item-quantity {
         margin-top: 20px;
     }
-
-    .item__quantity-list {}
-
-
 
     //Корзина нижняя часть
     .basket__bottom {

@@ -18,8 +18,8 @@
 @import "_container.scss";
 
 // <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ ЭЛЕМЕНТОВ И СТРАНИЦ>======================
-@import "__lib_swiper.scss"; //Галлерея с зуммированием
-@import "__scrollbar.scss";
+@import "_lib_swiper.scss"; //Галлерея
+@import "_scrollbar.scss";
 
 //<ПОДКЛЮЧЕНИЕ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
 @import "_ui.scss";
@@ -27,4 +27,6 @@
 //<ОСНОВНОЙ БЛОК>=================================
 @import "__item.scss";
 
-@import "__91_modal-basket.scss";
+@import "__block_quantity-list.scss";
+
+@import "__modal-basket.scss";

@@ -35,12 +35,12 @@ function quantityLimit(element) {
     }
 
     //Если введено значение меньше минимального - присвоить минимальное
-    if (element.value < min_value  || element.value == "" || element.value == 0) {
+    if (element.value < min_value || element.value == "" || element.value == 0) {
 
         //Таймаут присвоения
         window.quantityTimeOut = setTimeout(function () {
             quantityLimitMin()
-        }, 1000);
+        }, 2500);
     }
 
     //Проверка измененного значения
@@ -51,101 +51,163 @@ function quantityLimit(element) {
 }
 
 
-
-
 //Валидация инптуа количества товаров и кнопок "+" и "-"
 (function () {
-    //кнопка вверх
-    var buttonIncrease = document.querySelector('.item__quantity-button--increase');
-    //кнопка вниз
-    var buttonDecrease = document.querySelector('.item__quantity-button--decrease');
-    //поле ввода колличества
-    var itemQuantityInput = document.querySelector('.item__quantity-input');
-    //максимальное значение
-    var max_value = parseInt(itemQuantityInput.max);
+    //кнопки вверх
+    var buttonIncrease = document.querySelectorAll('.quantity-list__button--increase');
+    //кнопки вниз
+    var buttonDecrease = document.querySelectorAll('.quantity-list__button--decrease');
+    //поля ввода колличества
+    var itemQuantityInput = document.querySelectorAll('.quantity-list__input');
 
 
+    //Создаем массивы из псевдомассивов кнопок и полей
+    window.buttonIncreaseArr = [];
+    window.buttonDecreaseArr = [];
+    window.itemQuantityInputArr = [];
 
-    //Увеличиваем на 1 
-    buttonIncrease.addEventListener('click', function () {
-        //текущее значение
-        var input_value = parseInt(itemQuantityInput.value);
+    //i-я кнопка вверх (записываем в массив кнопок вверх)
+    for (var i = 0; i < buttonIncrease.length; i++) {
+        buttonIncreaseArr[i] = buttonIncrease[i];
+    }
 
-        if (itemQuantityInput.value < 9) {
-            itemQuantityInput.value = "0" + (parseInt(itemQuantityInput.value) + 1);
-        } else if (itemQuantityInput.value < itemQuantityInput.max) {
-            itemQuantityInput.value = parseInt(itemQuantityInput.value) + 1;
-        } else {
-            itemQuantityInput.value = parseInt(itemQuantityInput.max);
-        }
+    //i-я кнопка ввниз (записываем в массив кнопок вниз)
+    for (var i = 0; i < buttonDecrease.length; i++) {
+        buttonDecreaseArr[i] = buttonDecrease[i];
+    }
 
-        //изменение кнопки "+"
-        if (input_value >= (max_value - 1)) {
-            buttonIncrease.classList.add('item__quantity-button--disabled');
-        }
+    //i-е поле ввода колличества (записываем в массив полей ввода колличества)
+    for (var i = 0; i < itemQuantityInput.length; i++) {
+        itemQuantityInputArr[i] = itemQuantityInput[i];
+    }
 
-        //изменение кнопки "-"
-        if (input_value >= 1) {
-            buttonDecrease.classList.remove('item__quantity-button--disabled');
-        }
-    });
 
-    //Уменьшаем на 1 
-    buttonDecrease.addEventListener('click', function () {
-        //текущее значение
-        var input_value = parseInt(itemQuantityInput.value);
+    //Увеличиваем значение инпута на 1
+    for (var i = 0; i < buttonIncrease.length; i++) {
+        buttonIncrease[i].addEventListener('click', function (e) {
 
-        if (itemQuantityInput.value < 11 && itemQuantityInput.value > 1) {
-            itemQuantityInput.value = "0" + (parseInt(itemQuantityInput.value) - 1);
-        } else if (itemQuantityInput.value > 1) {
-            itemQuantityInput.value = parseInt(itemQuantityInput.value) - 1;
-        } else {
-            itemQuantityInput.value = "01"
-        }
+            //находим текущий индекс кнопки, по которой кликнули
+            var targetIndexIncrease = buttonIncreaseArr.indexOf(e.target);
 
-        //изменение кнопки "+"
-        if (input_value <= max_value) {
-            buttonIncrease.classList.remove('item__quantity-button--disabled');
-        }
+            //увеличиваем значение инпута на 1
+            if (itemQuantityInput[targetIndexIncrease].value < 9) {
+                itemQuantityInput[targetIndexIncrease].value = "0" + (parseInt(itemQuantityInput[targetIndexIncrease].value) + 1);
+            } else if (itemQuantityInput[targetIndexIncrease].value < itemQuantityInput[targetIndexIncrease].max) {
+                itemQuantityInput[targetIndexIncrease].value = parseInt(itemQuantityInput[targetIndexIncrease].value) + 1;
+            } else {
+                itemQuantityInput[targetIndexIncrease].value = parseInt(itemQuantityInput[targetIndexIncrease].max);
+            }
 
-        //изменение кнопки "-"
-        if (input_value <= 2) {
-            buttonDecrease.classList.add('item__quantity-button--disabled');
-        }
-    });
+            //текущее значение
+            var inputValue = parseInt(itemQuantityInput[targetIndexIncrease].value);
+
+            //максимальное значение
+            var maxValue = parseInt(itemQuantityInput[targetIndexIncrease].max);
+
+            //минимальное значение
+            var minValue = parseInt(itemQuantityInput[targetIndexIncrease].min);
+
+            //изменение кнопки "+"
+            if (inputValue >= (maxValue)) {
+                buttonIncrease[targetIndexIncrease].classList.add('quantity-list__button--disabled');
+            }
+
+            //изменение кнопки "-"
+            if (inputValue >= minValue) {
+                buttonDecrease[targetIndexIncrease].classList.remove('quantity-list__button--disabled');
+            }
+        });
+    }
+
+
+    //Уменьшаем значение инпута на 1 
+    for (var i = 0; i < buttonIncrease.length; i++) {
+        buttonDecrease[i].addEventListener('click', function (e) {
+
+            //находим текущий индекс кнопки, по которой кликнули
+            var targetIndexDecrease = buttonDecreaseArr.indexOf(e.target);
+
+            //уменьшаем значение инпута на 1 
+            if (itemQuantityInput[targetIndexDecrease].value < 11 && itemQuantityInput[targetIndexDecrease].value > 1) {
+                itemQuantityInput[targetIndexDecrease].value = "0" + (parseInt(itemQuantityInput[targetIndexDecrease].value) - 1);
+            } else if (itemQuantityInput[targetIndexDecrease].value > 1) {
+                itemQuantityInput[targetIndexDecrease].value = parseInt(itemQuantityInput[targetIndexDecrease].value) - 1;
+            } else {
+                itemQuantityInput[targetIndexDecrease].value = "01"
+            }
+
+            //текущее значение
+            var inputValue = parseInt(itemQuantityInput[targetIndexDecrease].value);
+
+            //максимальное значение
+            var maxValue = parseInt(itemQuantityInput[targetIndexDecrease].max);
+
+            //минимальное значение
+            var minValue = parseInt(itemQuantityInput[targetIndexDecrease].min);
+
+            //изменение кнопки "+"
+            if (inputValue <= maxValue) {
+                buttonIncrease[targetIndexDecrease].classList.remove('quantity-list__button--disabled');
+            }
+
+            //изменение кнопки "-"
+            if (inputValue <= minValue) {
+                buttonDecrease[targetIndexDecrease].classList.add('quantity-list__button--disabled');
+            }
+        });
+    }
 
 
 
     //Кнопка +
-    itemQuantityInput.addEventListener('input', function () {
-        if (this.value >= max_value) {
-            buttonIncrease.classList.add('item__quantity-button--disabled');
-        }
+    for (var i = 0; i < itemQuantityInput.length; i++) {
+        itemQuantityInput[i].addEventListener('input', function (e) {
 
-        if (this.value < max_value) {
-            buttonIncrease.classList.remove('item__quantity-button--disabled');
-        }
-    });
+            //находим текущий индекс инпута, в котором изменили значение
+            var targetIndexInput = itemQuantityInputArr.indexOf(e.target);
+
+            //максимальное значение
+            var maxValue = parseInt(itemQuantityInput[targetIndexInput].max);
+
+            if (this.value >= maxValue) {
+                buttonIncrease[targetIndexInput].classList.add('quantity-list__button--disabled');
+            }
+
+            if (this.value < maxValue) {
+                buttonIncrease[targetIndexInput].classList.remove('quantity-list__button--disabled');
+            }
+        });
+    }
 
     //Кнопка -
-    itemQuantityInput.addEventListener('input', function () {
-        if (this.value > 1) {
-            buttonDecrease.classList.remove('item__quantity-button--disabled');
-        }
+    for (var i = 0; i < itemQuantityInput.length; i++) {
+        itemQuantityInput[i].addEventListener('input', function (e) {
 
-        if (this.value < 2) {
-            buttonDecrease.classList.add('item__quantity-button--disabled');
-        }
-    });
+            //находим текущий индекс инпута, в котором изменили значение
+            var targetIndexInput = itemQuantityInputArr.indexOf(e.target);
 
+            //минимальное значение
+            var minValue = parseInt(itemQuantityInput[targetIndexInput].min);
 
+            if (this.value > minValue) {
+                buttonDecrease[targetIndexInput].classList.remove('quantity-list__button--disabled');
+            }
+
+            if (this.value < (minValue + 1)) {
+                buttonDecrease[targetIndexInput].classList.add('quantity-list__button--disabled');
+            }
+        });
+    }
 
     //Добваление "0" перед числом для количества "1-9"
-    itemQuantityInput.addEventListener('change', function () {
-        if (this.value > 0 && this.value < 10) {
-            this.value = "0" + Number(this.value);
-        }
-    });
+    for (var i = 0; i < itemQuantityInput.length; i++) {
+        itemQuantityInput[i].addEventListener('change', function (e) {
+
+            if (this.value > 0 && this.value < 10) {
+                this.value = "0" + Number(this.value);
+            }
+        });
+    }
 
 })();
 (function () {

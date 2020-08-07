@@ -344,7 +344,7 @@
         flex-direction: row-reverse;
         align-items: center;
 
-        
+
     }
 
     .rating-item__star-input {
@@ -435,7 +435,7 @@
         }
     }
 
-   
+
 
 
 
@@ -549,115 +549,26 @@
 
     .item__quantity {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+
+        margin-left: -22px;
     }
 
     .item__quantity-text {
-        margin-right: 8px;
-        font-size: 13px;
+        margin-right: 12px;
+        font-size: 14px;
         line-height: 1.2;
         letter-spacing: 0.05em;
         color: #37474f;
     }
 
+    //Кол-во товаров
     .item__quantity-list {
         display: flex;
     }
 
-    //Инпут колличества
-    .item__quantity-input {
-        width: 52px;
-        height: 46px;
-        border: 1px solid #dfdfdf;
-
-        font-size: 18px;
-        text-align: center;
-        line-height: 35px;
-        letter-spacing: 0.025em;
-        color: #403f40;
-
-        //скрываем дефолтные стрелки
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-        }
-
-        -moz-appearance: textfield;
-    }
-
-
-
-    .item__quantity-buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        margin-left: 5px;
-    }
-
-    //кнопка-стрелка
-    .item__quantity-button {
-        position: relative;
-        width: 21px;
-        height: 20px;
-        background-color: transparent;
-
-        &::before {
-            content: "";
-            position: absolute;
-            left: 7px;
-            top: 5px;
-
-            width: 7px;
-            height: 7px;
-
-            border: solid #37474f;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-
-            transition-duration: $item-transition-hover;
-        }
-    }
-
-    //кнопка-стрелка (вверх)
-    .item__quantity-button--increase {
-        transform: rotate(180deg);
-    }
-
-    //кнопка-стрелка (вниз)
-    .item__quantity-button--decrease {}
-
-    //кнопки-стрелки (активное состояние)
-    .item__quantity-button:hover {
-        &::before {
-            border: solid #536dfe;
-            border-width: 0 2px 2px 0;
-            transition-duration: $item-transition-hover;
-        }
-    }
-
-    .item__quantity-button:active {
-        &::before {
-            border: solid #a5cee2;
-            border-width: 0 2px 2px 0;
-            transition-duration: $item-transition-hover;
-        }
-    }
-
-    //НЕ активное состояние
-    .item__quantity-button--disabled {
-        &::before {
-            border: solid #37474f;
-            border-width: 0 2px 2px 0;
-            opacity: 0.2;
-
-            transition-duration: $item-transition-hover;
-        }
-    }
-
-
-
+    
     //кнопка "добваить в корзину"
     .item__add-to-basket {
         margin-top: 40px;
@@ -672,17 +583,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-// -- ПЛАНШЕТ, ДЕСКТОП (>= 768px) --//
+// -- ПЛАНШЕТ, ДЕСКТОП (>= 800px) --//
 @media (min-width: $md3+px) {
 
     .item {
@@ -909,13 +810,6 @@
 
         cursor: grab;
     }
-
-
-
-
-
-
-
 
 
 
@@ -1248,102 +1142,8 @@
         color: #37474f;
     }
 
-    .item__quantity-list {
-        display: flex;
-    }
-
-    //Инпут колличества
-    .item__quantity-input {
-        width: 52px;
-        height: 46px;
-        border: 1px solid #dfdfdf;
-
-        font-size: 18px;
-        text-align: center;
-        line-height: 35px;
-        letter-spacing: 0.025em;
-        color: #403f40;
-
-        //скрываем дефолтные стрелки
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-        }
-
-        -moz-appearance: textfield;
-    }
-
-
-
-    .item__quantity-buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        margin-left: 5px;
-    }
-
-    //кнопка-стрелка
-    .item__quantity-button {
-        position: relative;
-        width: 21px;
-        height: 20px;
-        background-color: transparent;
-
-        &::before {
-            content: "";
-            position: absolute;
-            left: 7px;
-            top: 5px;
-
-            width: 7px;
-            height: 7px;
-
-            border: solid #37474f;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-
-            transition-duration: $item-transition-hover;
-        }
-    }
-
-    //кнопка-стрелка (вверх)
-    .item__quantity-button--increase {
-        transform: rotate(180deg);
-    }
-
-    //кнопка-стрелка (вниз)
-    .item__quantity-button--decrease {}
-
-    //кнопки-стрелки (активное состояние)
-    .item__quantity-button:hover {
-        &::before {
-            border: solid #536dfe;
-            border-width: 0 2px 2px 0;
-            transition-duration: $item-transition-hover;
-        }
-    }
-
-    .item__quantity-button:active {
-        &::before {
-            border: solid #a5cee2;
-            border-width: 0 2px 2px 0;
-            transition-duration: $item-transition-hover;
-        }
-    }
-
-    //НЕ активное состояние
-    .item__quantity-button--disabled {
-        &::before {
-            border: solid #37474f;
-            border-width: 0 2px 2px 0;
-            opacity: 0.2;
-
-            transition-duration: $item-transition-hover;
-        }
-    }
-
-
+    //Кол-во товаров
+    .item__quantity-list {}
 
     //кнопка "добваить в корзину"
     .item__add-to-basket {

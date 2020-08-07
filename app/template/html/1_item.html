@@ -152,7 +152,8 @@
                     <input class="rating-item__star-input" id="item-rating-5" type='radio' name='item-rating' value='5'>
                     <label class="rating-item__star-label" for="item-rating-5"></label>
 
-                    <input class="rating-item__star-input" id="item-rating-4" type='radio' name='item-rating' value='4' checked>
+                    <input class="rating-item__star-input" id="item-rating-4" type='radio' name='item-rating' value='4'
+                        checked>
                     <label class="rating-item__star-label" for="item-rating-4"></label>
 
                     <input class="rating-item__star-input" id="item-rating-3" type='radio' name='item-rating' value='3'>
@@ -204,16 +205,13 @@
             <div class="item__info-bottom">
                 <div class="item__quantity">
                     <span class="item__quantity-text">Quantity</span>
-                    <div class="item__quantity-list">
-
-                        <input class="item__quantity-input" type="number" min="1" max="50"
+                    <div class="item__quantity-list quantity-list">
+                        <input class="quantity-list__input" type="number" min="1" max="50"
                             onkeyup="quantityLimit(this);" step="1" value="01">
-
-                            
-                        <div class="item__quantity-buttons">
-                            <button class="item__quantity-button item__quantity-button--increase"></button>
+                        <div class="quantity-list__buttons">
+                            <button class="quantity-list__button quantity-list__button--increase"></button>
                             <button
-                                class="item__quantity-button item__quantity-button--decrease item__quantity-button--disabled "></button>
+                                class="quantity-list__button quantity-list__button--decrease quantity-list__button--disabled"></button>
                         </div>
                     </div>
                 </div>
