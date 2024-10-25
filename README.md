@@ -1,7 +1,7 @@
 # «Sennheiser» headphone page layout
 
 1. **Mobile First.**
-2. **Responsive and adaptive layout on Flexbox** "(for 2 breakpoints: mobile, tablet-desktop)".
+2. **Responsive and adaptive layout on Flexbox** (for 2 breakpoints: mobile, tablet-desktop).
 3. **BEM**.
 4. **CSS Preprocessor SASS** (SCSS syntax).
 5. **Automation (Gulp).**
